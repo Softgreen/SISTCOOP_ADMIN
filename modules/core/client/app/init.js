@@ -71,7 +71,7 @@ angular.element(document).ready(function () {
 
     var keycloakUrl = 'http://multivadelsur.ddns.net:8080/auth';
     var keycloakRealm = 'SISTEMA_FINANCIERO';
-    var keycloakClientId = 'SISTCOOP_ADMIN';
+    var keycloakClientId = 'SISTCOOP_APP';
 
     /* jshint ignore:start */
     var keycloak = new Keycloak({
