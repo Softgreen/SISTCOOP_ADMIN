@@ -33,8 +33,7 @@
     "angular-patternfly": "~2.6.0",
     "jquery-ui": "~1.11.4",
     "jquery": "~2.1.4",
-    "sistcoop": "https://github.com/Softgreen/SISTCOOP-JS.git#master",
-    "qz-tray": "https://github.com/Softgreen/SISTCOOP-QZTRAY.git#master"
+    "sistcoop": "https://github.com/Softgreen/SISTCOOP-JS.git#master"
   },
   "resolutions"    : {
     "angular"  : "1.4.7"
