@@ -17,8 +17,10 @@ angular.module('rrhh').controller('Rrhh.Trabajador.EditarTrabajador.AccesoSistem
 
     $scope.desvincular = function () {
       SGDialog.confirm('Desvincular', 'Estas seguro de quitar el usuario para el trabajador?', function () {
-        $scope.view.trabajador.$removeUsuario().then(
-          function (response) {
+
+        $scope.view.trabajador.usuario = undefined;
+        TrabajadorService.actualizar($scope.view.trabajador.id, $scope.view.trabajador).then(
+          function (data) {
             toastr.success('Trabajador actualizado');
             $scope.view.usuario = undefined;
             $scope.view.trabajador.usuario = undefined;
@@ -40,7 +42,7 @@ angular.module('rrhh').controller('Rrhh.Trabajador.EditarTrabajador.AccesoSistem
           $scope.working = true;
           $scope.view.trabajador.usuario = $scope.view.usuario;
 
-          TrabajadorService.actualizar($scope.view.id, $scope.view.trabajador).then(
+          TrabajadorService.actualizar($scope.view.trabajador.id, $scope.view.trabajador).then(
             function (data) {
               toastr.success('Trabajador actualizado');
               $scope.working = false;
