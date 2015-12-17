@@ -1,0 +1,143 @@
+<h1><strong>Tipo de cambio Compra/Venta</strong></h1>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <fieldset class="border-top">
+          <legend><span class="text">Compra Dolares Americanos</span></legend>
+          <div class="row">
+            <div class="col-sm-12">
+              <form name="formCompraDolar" data-ng-submit="guardarTasaCompraDolar()" class="form-horizontal" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : formCompraDolar.tasaCompraDolar.$invalid && formCompraDolar.$dirty}">
+                  <label class="col-sm-3 control-label"><span class="required">*</span> Tasa:</label>
+                  <div class="col-sm-3">
+                    <input type="text" name="tasaCompraDolar" ng-model="view.tasaCompraDolar" class="form-control"
+                           ui-number-mask="3" min="0" max="10"
+                           ng-minlength="1" ng-maxlength="5"
+                           placeholder="0.00" required/>
+                    <div ng-messages="formCompraDolar.tasaCompraDolar.$error" ng-if="formCompraDolar.$dirty">
+                      <div class="has-error" ng-message="required">Ingrese tasa.</div>
+                      <div class="has-error" ng-message="maxlength">Maximo 5 caracteres.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <button class="btn btn-primary" ng-disabled="working">
+                      <span ng-show="working">Guardando...</span>
+                      <span ng-hide="working">Guardar</span>
+                    </button>
+                    <button sg-cancel ng-disabled="working" ui-sref="^.buscar">Cancelar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="border-top">
+          <legend><span class="text">Venta Dolares Americanos</span></legend>
+          <div class="row">
+            <div class="col-sm-12">
+              <form name="formVentaDolar" data-ng-submit="guardarTasaVentaDolar()" class="form-horizontal" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : formVentaDolar.tasaVentaDolar.$invalid && formVentaDolar.$dirty}">
+                  <label class="col-sm-3 control-label"><span class="required">*</span> Tasa:</label>
+                  <div class="col-sm-3">
+                    <input type="text" name="tasaVentaDolar" ng-model="view.tasaVentaDolar" class="form-control"
+                           ui-number-mask="3" min="0" max="10"
+                           ng-minlength="1" ng-maxlength="5"
+                           placeholder="0.00" required/>
+                    <div ng-messages="formVentaDolar.tasaVentaDolar.$error" ng-if="formVentaDolar.$dirty">
+                      <div class="has-error" ng-message="required">Ingrese tasa.</div>
+                      <div class="has-error" ng-message="maxlength">Maximo 5 caracteres.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <button class="btn btn-primary" ng-disabled="working">
+                      <span ng-show="working">Guardando...</span>
+                      <span ng-hide="working">Guardar</span>
+                    </button>
+                    <button sg-cancel ng-disabled="working" ui-sref="^.buscar">Cancelar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <fieldset class="border-top">
+          <legend><span class="text">Compra Euros</span></legend>
+          <div class="row">
+            <div class="col-sm-12">
+              <form name="formCompraEuro" data-ng-submit="guardarTasaCompraEuro()" class="form-horizontal" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : formCompraEuro.tasaCompraEuro.$invalid && formCompraEuro.$dirty}">
+                  <label class="col-sm-3 control-label"><span class="required">*</span> Tasa:</label>
+                  <div class="col-sm-3">
+                    <input type="text" name="tasaCompraEuro" ng-model="view.tasaCompraEuro" class="form-control"
+                           ui-number-mask="3" min="0" max="10"
+                           ng-minlength="1" ng-maxlength="5"
+                           placeholder="0.00" required/>
+                    <div ng-messages="formCompraEuro.tasaCompraEuro.$error" ng-if="formCompraEuro.$dirty">
+                      <div class="has-error" ng-message="required">Ingrese tasa.</div>
+                      <div class="has-error" ng-message="maxlength">Maximo 5 caracteres.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <button class="btn btn-primary" ng-disabled="working">
+                      <span ng-show="working">Guardando...</span>
+                      <span ng-hide="working">Guardar</span>
+                    </button>
+                    <button sg-cancel ng-disabled="working" ui-sref="^.buscar">Cancelar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="border-top">
+          <legend><span class="text">Venta Euros</span></legend>
+          <div class="row">
+            <div class="col-sm-12">
+              <form name="formVentaEuro" data-ng-submit="guardarTasaVentaEuro()" class="form-horizontal" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : formVentaEuro.tasaVentaEuro.$invalid && formVentaEuro.$dirty}">
+                  <label class="col-sm-3 control-label"><span class="required">*</span> Tasa:</label>
+                  <div class="col-sm-3">
+                    <input type="text" name="tasaVentaEuro" ng-model="view.tasaVentaEuro" class="form-control"
+                           ui-number-mask="3" min="0" max="10"
+                           ng-minlength="1" ng-maxlength="5"
+                           placeholder="0.00" required/>
+                    <div ng-messages="formVentaEuro.tasaVentaEuro.$error" ng-if="formVentaEuro.$dirty">
+                      <div class="has-error" ng-message="required">Ingrese tasa.</div>
+                      <div class="has-error" ng-message="maxlength">Maximo 5 caracteres.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <button class="btn btn-primary" ng-disabled="working">
+                      <span ng-show="working">Guardando...</span>
+                      <span ng-hide="working">Guardar</span>
+                    </button>
+                    <button sg-cancel ng-disabled="working" ui-sref="^.buscar">Cancelar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

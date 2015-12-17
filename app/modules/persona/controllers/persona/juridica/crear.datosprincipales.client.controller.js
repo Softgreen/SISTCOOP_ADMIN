@@ -39,7 +39,7 @@ angular.module('persona').controller('Persona.Juridica.CrearPersonaJuridica.Dato
         };
 
         $scope.goTabRepresentante = function () {
-            if ($scope.form.$valid) {
+            if ($scope.formCompraDolar.$valid) {
                 $scope.view.persona.tipoDocumento = {
                     id: $scope.combo.selected.tipoDocumento.id,
                     abreviatura: $scope.combo.selected.tipoDocumento.abreviatura
@@ -47,7 +47,7 @@ angular.module('persona').controller('Persona.Juridica.CrearPersonaJuridica.Dato
                 $scope.view.persona.tipoEmpresa = $scope.combo.selected.tipoEmpresa;
                 $state.go('^.representante');
             } else {
-                $scope.form.$setSubmitted();
+                $scope.formCompraDolar.$setSubmitted();
             }
         };
 
