@@ -21,6 +21,7 @@ angular.module('rrhh').controller('Rrhh.Sucursal.Agencia.CrearAgenciaController'
                     $state.go('^.editar', {agencia: response.id});
                 },
                 function error(err) {
+                    $scope.working = false;
                     toastr.error(err.data.message);
                 }
             );

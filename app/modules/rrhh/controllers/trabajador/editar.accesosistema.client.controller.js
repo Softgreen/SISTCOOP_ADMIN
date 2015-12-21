@@ -49,6 +49,7 @@ angular.module('rrhh').controller('Rrhh.Trabajador.EditarTrabajador.AccesoSistem
               $scope.view.trabajador.usuario = $scope.view.usuario;
             },
             function error(err) {
+              $scope.working = false;
               toastr.error(err.data.errorMessage);
             }
           );

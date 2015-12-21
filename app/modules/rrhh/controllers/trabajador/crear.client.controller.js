@@ -90,6 +90,7 @@ angular.module('rrhh').controller('Rrhh.Trabajador.CrearTrabajadorController',
                     $state.go('^.editar.resumen', {trabajador: response.id});
                 },
                 function error(err) {
+                    $scope.working = false;
                     toastr.error(err.data.message);
                 }
             );

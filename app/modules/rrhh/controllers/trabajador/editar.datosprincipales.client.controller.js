@@ -76,6 +76,7 @@ angular.module('rrhh').controller('Rrhh.Trabajador.EditarTrabajador.DatosPrincip
                     toastr.success('Trabajador actualizado satisfactoriamente');
                 },
                 function error(err) {
+                    $scope.working = false;
                     toastr.error(err.data.message);
                 }
             );
