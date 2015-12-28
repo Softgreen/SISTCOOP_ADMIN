@@ -78,7 +78,7 @@ angular.element(document).ready(function () {
 
       angular.module('mean').constant('EMPRESA', window.auth.empresa);
       angular.module('mean').constant('PRINTER', window.auth.printer);
-      
+
       if(keycloak.realmAccess.roles.indexOf('ADMIN') !== -1) {
         //Then init the app
         angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
