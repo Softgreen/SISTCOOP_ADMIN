@@ -78,14 +78,13 @@ angular.element(document).ready(function () {
 
       angular.module('mean').constant('EMPRESA', window.auth.empresa);
       angular.module('mean').constant('PRINTER', window.auth.printer);
-
-      //if (angular.isUndefined(sistcoop.agencia) || angular.isUndefined(sistcoop.caja) || angular.isUndefined(sistcoop.persona)) {
-      //  alert('No tiene una agencia, trabajador o caja asignada.');
-      //  keycloak.logout();
-      //} else {
+      
+      if(keycloak.realmAccess.roles.indexOf('ADMIN') !== -1) {
         //Then init the app
         angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
-      //}
+      } else {
+        alert('Usuario no tiene el Rol ADMIN');
+      }
     }).error(function () {
       alert('No se pudo verificar el origen de sucursal y agencia para el usuario');
     });
